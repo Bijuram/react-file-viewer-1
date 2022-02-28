@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import '../../styles/photo360.scss';
 
 export default class extends Component {
+  divRef = React.createRef();
   constructor(props) {
     super(props);
     let savedX;
@@ -29,7 +30,7 @@ export default class extends Component {
 
   componentDidMount() {
     const el = document.getElementById('360-photo');
-    const positionInfo = el.getBoundingClientRect();
+    const positionInfo = this.divRef.current.getBoundingClientRect();
     const height = positionInfo.height;
     const width = positionInfo.width;
 
@@ -106,7 +107,7 @@ export default class extends Component {
   render() {
     return (
       <div
-        id="360-photo"
+        ref={this.divRef}
         className="photo360"
         onMouseDown={this.onMouseDown}
         onMouseMove={this.onMouseMove}
