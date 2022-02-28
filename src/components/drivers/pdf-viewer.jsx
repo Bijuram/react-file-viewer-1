@@ -1,11 +1,7 @@
 // Copyright (c) 2017 PlanGrid, Inc.
 
-import React, {useState} from 'react';
-// import VisibilitySensor from 'react-visibility-sensor';
-
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = '../node_modules/pdfjs-dist/build/pdf.worker.min.js';
+import React, { useState } from "react";
+import { Document, Page } from "react-pdf";
 
 function PDFDriver(props) {
   const [numPages, setNumPages] = useState(null);
@@ -19,6 +15,7 @@ function PDFDriver(props) {
     <div>
       <Document
         file={props.filePath}
+        options={{ workerSrc: "/pdf.worker.js" }}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={pageNumber} />
