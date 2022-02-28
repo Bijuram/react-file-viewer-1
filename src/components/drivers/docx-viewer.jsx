@@ -7,6 +7,7 @@ import '../../styles/docx.scss';
 import Loading from '../loading';
 
 export default class extends Component {
+  divRef = React.createRef();
   componentDidMount() {
     const jsonFile = new XMLHttpRequest();
     jsonFile.open('GET', this.props.filePath, true);
@@ -34,7 +35,7 @@ export default class extends Component {
 
   render() {
     return (
-      <div id="docx">
+      <div ref={this.divRef}>
         <Loading />
       </div>);
   }
