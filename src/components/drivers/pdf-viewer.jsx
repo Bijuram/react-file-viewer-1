@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 
 import { Document, Page } from 'react-pdf';
 import { pdfjs  } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+pdfjs.GlobalWorkerOptions.workerSrc = 'public/pdf.worker.min.js';
 // setOptions({ workerSrc: '/pdf.worker.min.js', })
 function PDFDriver(props) {
   const [numPages, setNumPages] = useState(null);
