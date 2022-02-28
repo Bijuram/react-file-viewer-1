@@ -15,7 +15,7 @@ function PDFDriver(props) {
     <div>
       <Document
         file={props.filePath}
-        options={{ workerSrc: "pdf.worker.entry.js"}}
+        options={{ workerSrc: "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.js"}}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={pageNumber} />
