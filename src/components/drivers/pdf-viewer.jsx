@@ -4,9 +4,9 @@ import React, {useState} from 'react';
 // import VisibilitySensor from 'react-visibility-sensor';
 
 import { Document, Page } from 'react-pdf';
-import { setOptions  } from 'react-pdf';
-// pdfjs.GlobalWorkerOptions.workerSrc = 'pdfjs-dist/build/pdf.worker.min.js';
-setOptions({ workerSrc: '/pdf.worker.min.js', })
+import { pdfjs  } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+// setOptions({ workerSrc: '/pdf.worker.min.js', })
 function PDFDriver(props) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
