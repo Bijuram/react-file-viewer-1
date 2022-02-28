@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.js`;
 
 
 function PDFDriver(props) {
@@ -14,7 +15,6 @@ function PDFDriver(props) {
   }
 
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.js`;
 
   return (
     <div>
