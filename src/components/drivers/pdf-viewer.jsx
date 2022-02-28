@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { Document, Page } from "react-pdf";
+import { pdfjs } from 'react-pdf';
+
 
 function PDFDriver(props) {
   const [numPages, setNumPages] = useState(null);
@@ -11,11 +13,13 @@ function PDFDriver(props) {
     setNumPages(numPages);
   }
 
+
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.js`;
+
   return (
     <div>
       <Document
         file={props.filePath}
-        options={{ workerSrc: "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.js"}}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={pageNumber} />
